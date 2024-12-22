@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %} Calculator {% endblock title %}
+
+{% block body %}
+<h1 class="text-center pt-5">Calculator</h1>
+<form method="post" class="m-auto my-5 w-50 bg-info-subtle p-5 form ">
+  {% csrf_token %}
+  
+  
+
+    <div class="mb-3 ">
+      <label class="form-label">Value 1</label>
+      <input type="text" name="num1"  class="form-control">
+
+    </div>
+
+    
+    <div class="mb-3">
+        <label class="form-label">Value 2</label>
+        <input type="text" name="num2"  class="form-control">
+    </div> 
+
+    <label for="">Select Operator</label>
+    <select name="opr" >
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">x</option>
+        <option value="/">/</option>
+
+    </select>
+    <br>
+    <br>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+  <p class="mt-5">Result</p>
+  <input type="text" placeholder="0" value="{{c}}" >
+</form>
+
+
+{% endblock body %}

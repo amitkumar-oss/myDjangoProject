@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %} Marksheets {% endblock title %}
+
+{% block body %}
+<h1 class="text-center pt-5"> Student Marksheet</h1>
+<form method="post" class="m-auto my-5 w-50 bg-info-subtle p-5 form ">
+    {% csrf_token %}
+
+    <div class="mb-3 ">
+        <label for="sub1" class="form-label">Subject 1</label>
+        <input type="text" name="sub1" class="form-control">
+
+    </div>
+    <div class="mb-3 ">
+        <label for="sub2" class="form-label">Subject 2</label>
+        <input type="text" name="sub2" class="form-control">
+
+    </div>
+    <div class="mb-3 ">
+        <label for="sub3" class="form-label">Subject 3</label>
+        <input type="text" name="sub3" class="form-control">
+
+    </div>
+    <div class="mb-3 ">
+        <label for="sub4" class="form-label">Subject 4</label>
+        <input type="text" name="sub4" class="form-control">
+
+    </div>
+    <div class="mb-3 ">
+        <label for="sub5" class="form-label">Subject 5</label>
+        <input type="text" name="sub5" class="form-control">
+
+    </div>
+    <br>
+    <div>
+        <button type="submit" class="btn btn-primary">Generate Marksheet</button>
+    </div>
+
+    <br>
+    <br>
+
+
+    <label class="form-label">Total</label>
+    <input type="text" name="output" value="{{total}}" class="form-control">
+
+    <label class="form-label">Percentage</label>
+    <input type="text" name="output" value="{{percentage}}" class="form-control">
+
+    <label class="form-label">Division</label>
+    <input type="text" name="output" value="{{division}}" class="form-control">
+
+
+</form>
+
+
+{% endblock body %}

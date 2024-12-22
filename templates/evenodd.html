@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %} EvenOdd {% endblock title %}
+
+{% block body %}
+<h1 class="text-center pt-5">Find Even/Odd</h1>
+<form method="post" class="m-auto my-5 w-50 bg-info-subtle p-5 form ">
+
+  {% if error %}
+  <p class=" alert alert-danger" role="alert">Please Enter the value</p>
+  {% endif %}
+
+  {% csrf_token %}
+  <div class="mb-3 ">
+    <label class="form-label">Value</label>
+    <input type="text" name="num" class="form-control">
+
+  </div>
+  <br>
+  <div>
+    <button type="submit" class="btn btn-primary">Find</button>
+  </div>
+  <p class="mt-5">Result</p>
+  <input class="p-1" type="text" placeholder="------" value="{{c}}">
+</form>
+
+
+{% endblock body %}

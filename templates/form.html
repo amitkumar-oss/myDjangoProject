@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %} Form {% endblock title %}
+
+{% block body %}
+
+
+<h1 class="text-center pt-5">User Form</h1>
+<form method="post" action="{% url 'submitform' %}" class="m-auto my-5 w-50 bg-info-subtle p-5 form ">
+  {% csrf_token %}
+  
+  {{models}}     
+
+
+   <!-- <div class="mb-3 ">
+      <label for="n1" class="form-label">Value 1</label>
+      <input type="text" name="num1" value="{{n1}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+    </div>
+    <div class="mb-3">
+      <label for="n2" class="form-label">Value 2</label>
+      <input type="text" name="num2" value="{{n2}}" class="form-control" id="exampleInputPassword1">
+    </div> -->
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+  <p class="mt-5">Result</p>
+  <input type="text" placeholder="0" value="{{output}}">
+</form>
+
+
+{% endblock body %}
