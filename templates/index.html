@@ -57,7 +57,7 @@
 <!--start card-->
 
 
-<h1 class="text-center mb-4 mt-4">This is Home page</h1>
+<!-- <h1 class="text-center mb-4 mt-4">This is Home page</h1>
 <div class="row row-cols-1 row-cols-md-3 g-z mt-5 mb-5 container-fluid ">
     <div class="col">
         <div class="card">
@@ -71,6 +71,27 @@
         </div>
     </div>
     
-</div>
+</div> -->
 <!--card end-->
+
+<section class="feature-area m-5 section-gap">
+    <div class="container">
+        <div class="row">
+            {% for n in servicesData %}
+            <div class="col-lg-4 col-nd-6 mb-3" id="card-portion">
+                <div class="single-feaure mb-30">
+                    <div class="title d-flex flex-row pb-20">
+                        <span class="{{n.service_icon}}"></span>
+                        <h4><a href="#">{{n.service_title}}</a></h4>
+                    </div>
+                    <p>{{n.service_dec | safe}}</p>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
 {% endblock body %}

@@ -7,7 +7,7 @@ from service.models import Service
 # Create your views here.
 
 def home(request):
-    servicesData=Service.objects.all()
+    servicesData=Service.objects.all().order_by('service_title')      #.order_by('service_title') this is for alfabetwise series
     # for a in servicesData:
     #     print(a.service_title) 
     data={
